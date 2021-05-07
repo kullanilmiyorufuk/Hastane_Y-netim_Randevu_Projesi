@@ -30,6 +30,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LblTC = new System.Windows.Forms.Label();
             this.LblAdSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,8 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.LblTC = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Txtid = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,6 +70,15 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kişi Bilgileri";
+            // 
+            // LblTC
+            // 
+            this.LblTC.AutoSize = true;
+            this.LblTC.Location = new System.Drawing.Point(85, 27);
+            this.LblTC.Name = "LblTC";
+            this.LblTC.Size = new System.Drawing.Size(120, 23);
+            this.LblTC.TabIndex = 6;
+            this.LblTC.Text = "00000000000";
             // 
             // LblAdSoyad
             // 
@@ -98,6 +109,8 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Txtid);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.LnkBilgiDüzenle);
             this.groupBox2.Controls.Add(this.BtnRandevuAl);
             this.groupBox2.Controls.Add(this.label7);
@@ -116,18 +129,19 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // LnkBilgiDüzenle
             // 
             this.LnkBilgiDüzenle.AutoSize = true;
-            this.LnkBilgiDüzenle.Location = new System.Drawing.Point(6, 258);
+            this.LnkBilgiDüzenle.Location = new System.Drawing.Point(6, 264);
             this.LnkBilgiDüzenle.Name = "LnkBilgiDüzenle";
             this.LnkBilgiDüzenle.Size = new System.Drawing.Size(133, 23);
             this.LnkBilgiDüzenle.TabIndex = 6;
             this.LnkBilgiDüzenle.TabStop = true;
             this.LnkBilgiDüzenle.Text = "Bilgileri Düzenle";
+            this.LnkBilgiDüzenle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkBilgiDüzenle_LinkClicked);
             // 
             // BtnRandevuAl
             // 
-            this.BtnRandevuAl.Location = new System.Drawing.Point(92, 211);
+            this.BtnRandevuAl.Location = new System.Drawing.Point(92, 236);
             this.BtnRandevuAl.Name = "BtnRandevuAl";
-            this.BtnRandevuAl.Size = new System.Drawing.Size(116, 35);
+            this.BtnRandevuAl.Size = new System.Drawing.Size(116, 29);
             this.BtnRandevuAl.TabIndex = 5;
             this.BtnRandevuAl.Text = "Randevu al";
             this.BtnRandevuAl.UseVisualStyleBackColor = true;
@@ -135,7 +149,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 123);
+            this.label7.Location = new System.Drawing.Point(9, 148);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 23);
             this.label7.TabIndex = 6;
@@ -144,7 +158,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 75);
+            this.label6.Location = new System.Drawing.Point(9, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 23);
             this.label6.TabIndex = 5;
@@ -152,7 +166,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // RchSikayet
             // 
-            this.RchSikayet.Location = new System.Drawing.Point(92, 109);
+            this.RchSikayet.Location = new System.Drawing.Point(92, 134);
             this.RchSikayet.Name = "RchSikayet";
             this.RchSikayet.Size = new System.Drawing.Size(121, 96);
             this.RchSikayet.TabIndex = 4;
@@ -161,15 +175,16 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // CmbDoktor
             // 
             this.CmbDoktor.FormattingEnabled = true;
-            this.CmbDoktor.Location = new System.Drawing.Point(92, 72);
+            this.CmbDoktor.Location = new System.Drawing.Point(92, 97);
             this.CmbDoktor.Name = "CmbDoktor";
             this.CmbDoktor.Size = new System.Drawing.Size(121, 31);
             this.CmbDoktor.TabIndex = 4;
+            this.CmbDoktor.SelectedIndexChanged += new System.EventHandler(this.CmbDoktor_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 38);
+            this.label5.Location = new System.Drawing.Point(20, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 23);
             this.label5.TabIndex = 3;
@@ -178,10 +193,11 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // CmbBrans
             // 
             this.CmbBrans.FormattingEnabled = true;
-            this.CmbBrans.Location = new System.Drawing.Point(92, 35);
+            this.CmbBrans.Location = new System.Drawing.Point(92, 60);
             this.CmbBrans.Name = "CmbBrans";
             this.CmbBrans.Size = new System.Drawing.Size(121, 31);
             this.CmbBrans.TabIndex = 2;
+            this.CmbBrans.SelectedIndexChanged += new System.EventHandler(this.CmbBrans_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -221,14 +237,21 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.dataGridView2.Size = new System.Drawing.Size(551, 169);
             this.dataGridView2.TabIndex = 0;
             // 
-            // LblTC
+            // label1
             // 
-            this.LblTC.AutoSize = true;
-            this.LblTC.Location = new System.Drawing.Point(85, 27);
-            this.LblTC.Name = "LblTC";
-            this.LblTC.Size = new System.Drawing.Size(120, 23);
-            this.LblTC.TabIndex = 6;
-            this.LblTC.Text = "00000000000";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "id:";
+            // 
+            // Txtid
+            // 
+            this.Txtid.Location = new System.Drawing.Point(92, 24);
+            this.Txtid.Name = "Txtid";
+            this.Txtid.Size = new System.Drawing.Size(121, 31);
+            this.Txtid.TabIndex = 8;
             // 
             // FrmHastaDetay
             // 
@@ -277,5 +300,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.LinkLabel LnkBilgiDüzenle;
         private System.Windows.Forms.Label LblTC;
+        private System.Windows.Forms.TextBox Txtid;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -29,6 +29,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBilgiDuzenle));
             this.BtnKayitYap = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.CmbCinsiyet = new System.Windows.Forms.ComboBox();
@@ -53,6 +54,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnKayitYap.TabIndex = 30;
             this.BtnKayitYap.Text = "Güncelle";
             this.BtnKayitYap.UseVisualStyleBackColor = false;
+            this.BtnKayitYap.Click += new System.EventHandler(this.BtnKayitYap_Click);
             // 
             // label6
             // 
@@ -72,7 +74,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.CmbCinsiyet.Location = new System.Drawing.Point(178, 221);
             this.CmbCinsiyet.Name = "CmbCinsiyet";
             this.CmbCinsiyet.Size = new System.Drawing.Size(153, 31);
-            this.CmbCinsiyet.TabIndex = 28;
+            this.CmbCinsiyet.TabIndex = 6;
             // 
             // label5
             // 
@@ -89,14 +91,14 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.MskTel.Mask = "(999) 000-0000";
             this.MskTel.Name = "MskTel";
             this.MskTel.Size = new System.Drawing.Size(153, 31);
-            this.MskTel.TabIndex = 26;
+            this.MskTel.TabIndex = 4;
             // 
             // TxtSoyad
             // 
             this.TxtSoyad.Location = new System.Drawing.Point(178, 73);
             this.TxtSoyad.Name = "TxtSoyad";
             this.TxtSoyad.Size = new System.Drawing.Size(153, 31);
-            this.TxtSoyad.TabIndex = 25;
+            this.TxtSoyad.TabIndex = 2;
             // 
             // LblSoyad
             // 
@@ -112,7 +114,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtAd.Location = new System.Drawing.Point(178, 36);
             this.TxtAd.Name = "TxtAd";
             this.TxtAd.Size = new System.Drawing.Size(153, 31);
-            this.TxtAd.TabIndex = 23;
+            this.TxtAd.TabIndex = 1;
             // 
             // LblAd
             // 
@@ -128,7 +130,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtSifre.Location = new System.Drawing.Point(178, 184);
             this.TxtSifre.Name = "TxtSifre";
             this.TxtSifre.Size = new System.Drawing.Size(153, 31);
-            this.TxtSifre.TabIndex = 21;
+            this.TxtSifre.TabIndex = 5;
             // 
             // MskTC
             // 
@@ -136,7 +138,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.MskTC.Mask = "00000000000";
             this.MskTC.Name = "MskTC";
             this.MskTC.Size = new System.Drawing.Size(153, 31);
-            this.MskTC.TabIndex = 20;
+            this.MskTC.TabIndex = 3;
             this.MskTC.ValidatingType = typeof(int);
             // 
             // label3
@@ -159,8 +161,10 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // FrmBilgiDuzenle
             // 
+            this.AcceptButton = this.BtnKayitYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(381, 346);
             this.Controls.Add(this.BtnKayitYap);
@@ -178,9 +182,12 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimizeBox = false;
             this.Name = "FrmBilgiDuzenle";
-            this.Text = "FrmBilgiDuzenle";
+            this.Text = "Bilgi Güncelleme";
+            this.Load += new System.EventHandler(this.FrmBilgiDuzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

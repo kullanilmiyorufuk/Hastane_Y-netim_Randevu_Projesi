@@ -29,6 +29,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSekreterGiris));
             this.BtnGirisYap = new System.Windows.Forms.Button();
             this.TxtSifre = new System.Windows.Forms.TextBox();
             this.MskTC = new System.Windows.Forms.MaskedTextBox();
@@ -45,6 +46,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnGirisYap.TabIndex = 13;
             this.BtnGirisYap.Text = "Giriş Yap";
             this.BtnGirisYap.UseVisualStyleBackColor = true;
+            this.BtnGirisYap.Click += new System.EventHandler(this.BtnGirisYap_Click);
             // 
             // TxtSifre
             // 
@@ -93,8 +95,10 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // FrmSekreterGiris
             // 
+            this.AcceptButton = this.BtnGirisYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(473, 338);
             this.Controls.Add(this.BtnGirisYap);
@@ -104,9 +108,11 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimizeBox = false;
             this.Name = "FrmSekreterGiris";
-            this.Text = "FrmSekreterGiris";
+            this.Text = "Sekreter Girişi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
