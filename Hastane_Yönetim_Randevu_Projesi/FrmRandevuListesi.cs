@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace Hastane_Yönetim_Randevu_Projesi
 {
     public partial class FrmRandevuListesi : Form
@@ -15,6 +15,19 @@ namespace Hastane_Yönetim_Randevu_Projesi
         public FrmRandevuListesi()
         {
             InitializeComponent();
+        }
+        sqlbaglantisi bgl = new sqlbaglantisi();
+        private void FrmRandevuListesi_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Randevular", bgl.baglanti());
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+        
+        private void FrmRandevuListesi_DoubleClick(object sender, EventArgs e)
+        {
+           
         }
     }
 }

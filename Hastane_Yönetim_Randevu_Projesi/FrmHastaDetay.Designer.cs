@@ -29,12 +29,15 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHastaDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LblTC = new System.Windows.Forms.Label();
             this.LblAdSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Txtid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.LnkBilgiDüzenle = new System.Windows.Forms.LinkLabel();
             this.BtnRandevuAl = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,8 +50,6 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Txtid = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,6 +127,23 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Randevu Paneli";
             // 
+            // Txtid
+            // 
+            this.Txtid.Enabled = false;
+            this.Txtid.Location = new System.Drawing.Point(92, 24);
+            this.Txtid.Name = "Txtid";
+            this.Txtid.Size = new System.Drawing.Size(121, 31);
+            this.Txtid.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "id:";
+            // 
             // LnkBilgiDüzenle
             // 
             this.LnkBilgiDüzenle.AutoSize = true;
@@ -145,6 +163,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnRandevuAl.TabIndex = 5;
             this.BtnRandevuAl.Text = "Randevu al";
             this.BtnRandevuAl.UseVisualStyleBackColor = true;
+            this.BtnRandevuAl.Click += new System.EventHandler(this.BtnRandevuAl_Click);
             // 
             // label7
             // 
@@ -236,27 +255,13 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(551, 169);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "id:";
-            // 
-            // Txtid
-            // 
-            this.Txtid.Location = new System.Drawing.Point(92, 24);
-            this.Txtid.Name = "Txtid";
-            this.Txtid.Size = new System.Drawing.Size(121, 31);
-            this.Txtid.TabIndex = 8;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // FrmHastaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(820, 474);
             this.Controls.Add(this.groupBox4);
@@ -264,7 +269,9 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmHastaDetay";
             this.Text = "Hasta Detay";
             this.Load += new System.EventHandler(this.FrmHastaDetay_Load);

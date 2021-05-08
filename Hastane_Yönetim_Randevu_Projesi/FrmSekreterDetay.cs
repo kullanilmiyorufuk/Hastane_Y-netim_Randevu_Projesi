@@ -80,5 +80,44 @@ namespace Hastane_Yönetim_Randevu_Projesi
             bgl.baglanti().Close();
            
         }
+
+        private void BtnDuyuruOlustur_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("insert in Tbl_Duyurular (duyuru) values (@d1)", bgl.baglanti());
+            komut.Parameters.AddWithValue("@d1", RchDuyuru.Text);
+            bgl.baglanti().Close();
+            MessageBox.Show("Duyuru oluşturuldu","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+        }
+
+        private void BtnDoktorPanel_Click(object sender, EventArgs e)
+        {
+            FrmDoktorPaneli drp = new FrmDoktorPaneli();
+            drp.Show();
+
+        }
+
+        private void BtnBransPanel_Click(object sender, EventArgs e)
+        {
+            FrmBrans frb = new FrmBrans();
+            frb.Show();
+        }
+
+        private void BtnListe_Click(object sender, EventArgs e)
+        {
+            FrmRandevuListesi frl = new FrmRandevuListesi();
+            frl.Show();
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmDuyurular fr = new FrmDuyurular();
+            fr.Show();
+        }
     }
 }
