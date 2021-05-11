@@ -29,6 +29,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LblAdSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.RchSikayet = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -102,7 +102,6 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.RchSikayet);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(12, 148);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(372, 220);
@@ -112,20 +111,11 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // RchSikayet
             // 
-            this.RchSikayet.Location = new System.Drawing.Point(6, 62);
+            this.RchSikayet.Location = new System.Drawing.Point(6, 30);
             this.RchSikayet.Name = "RchSikayet";
-            this.RchSikayet.Size = new System.Drawing.Size(366, 142);
+            this.RchSikayet.Size = new System.Drawing.Size(366, 174);
             this.RchSikayet.TabIndex = 2;
             this.RchSikayet.Text = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Şikayet :";
             // 
             // groupBox3
             // 
@@ -145,6 +135,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(625, 432);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox4
             // 
@@ -166,6 +157,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnCikis.TabIndex = 3;
             this.BtnCikis.Text = "Çıkış";
             this.BtnCikis.UseVisualStyleBackColor = true;
+            this.BtnCikis.Click += new System.EventHandler(this.BtnCikis_Click);
             // 
             // BtnDuyurular
             // 
@@ -175,6 +167,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnDuyurular.TabIndex = 1;
             this.BtnDuyurular.Text = "Duyurular";
             this.BtnDuyurular.UseVisualStyleBackColor = true;
+            this.BtnDuyurular.Click += new System.EventHandler(this.BtnDuyurular_Click);
             // 
             // BtnGuncelle
             // 
@@ -184,11 +177,13 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnGuncelle.TabIndex = 0;
             this.BtnGuncelle.Text = "Bilgi Düzenle";
             this.BtnGuncelle.UseVisualStyleBackColor = true;
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // FrmDoktorDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1033, 483);
             this.Controls.Add(this.groupBox4);
@@ -196,13 +191,15 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorDetay";
-            this.Text = "FrmDoktorDetay";
+            this.Text = "Doktor Detay";
+            this.Load += new System.EventHandler(this.FrmDoktorDetay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -221,7 +218,6 @@ namespace Hastane_Yönetim_Randevu_Projesi
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RichTextBox RchSikayet;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button BtnCikis;
         private System.Windows.Forms.Button BtnDuyurular;

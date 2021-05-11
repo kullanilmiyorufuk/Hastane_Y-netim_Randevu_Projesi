@@ -29,6 +29,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorGiris));
             this.BtnGirisYap = new System.Windows.Forms.Button();
             this.LnkUyeOl = new System.Windows.Forms.LinkLabel();
             this.TxtSifre = new System.Windows.Forms.TextBox();
@@ -43,9 +44,10 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnGirisYap.Location = new System.Drawing.Point(329, 248);
             this.BtnGirisYap.Name = "BtnGirisYap";
             this.BtnGirisYap.Size = new System.Drawing.Size(100, 38);
-            this.BtnGirisYap.TabIndex = 12;
+            this.BtnGirisYap.TabIndex = 3;
             this.BtnGirisYap.Text = "Giriş Yap";
             this.BtnGirisYap.UseVisualStyleBackColor = true;
+            this.BtnGirisYap.Click += new System.EventHandler(this.BtnGirisYap_Click);
             // 
             // LnkUyeOl
             // 
@@ -62,7 +64,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtSifre.Location = new System.Drawing.Point(276, 211);
             this.TxtSifre.Name = "TxtSifre";
             this.TxtSifre.Size = new System.Drawing.Size(153, 31);
-            this.TxtSifre.TabIndex = 10;
+            this.TxtSifre.TabIndex = 2;
             this.TxtSifre.UseSystemPasswordChar = true;
             // 
             // MskTC
@@ -71,7 +73,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.MskTC.Mask = "00000000000";
             this.MskTC.Name = "MskTC";
             this.MskTC.Size = new System.Drawing.Size(153, 31);
-            this.MskTC.TabIndex = 9;
+            this.MskTC.TabIndex = 1;
             this.MskTC.ValidatingType = typeof(int);
             // 
             // label3
@@ -104,10 +106,12 @@ namespace Hastane_Yönetim_Randevu_Projesi
             // 
             // FrmDoktorGiris
             // 
+            this.AcceptButton = this.BtnGirisYap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(650, 456);
+            this.ClientSize = new System.Drawing.Size(664, 339);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnGirisYap);
             this.Controls.Add(this.LnkUyeOl);
@@ -116,9 +120,11 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorGiris";
-            this.Text = "FrmDoktorGiris";
+            this.Text = "Doktor Giriş";
             this.ResumeLayout(false);
             this.PerformLayout();
 

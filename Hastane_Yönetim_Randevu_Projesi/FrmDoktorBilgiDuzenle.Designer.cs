@@ -29,6 +29,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorBilgiDuzenle));
             this.TxtSoyad = new System.Windows.Forms.TextBox();
             this.LblSoyad = new System.Windows.Forms.Label();
             this.TxtAd = new System.Windows.Forms.TextBox();
@@ -47,7 +48,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtSoyad.Location = new System.Drawing.Point(162, 86);
             this.TxtSoyad.Name = "TxtSoyad";
             this.TxtSoyad.Size = new System.Drawing.Size(153, 31);
-            this.TxtSoyad.TabIndex = 31;
+            this.TxtSoyad.TabIndex = 2;
             // 
             // LblSoyad
             // 
@@ -63,7 +64,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtAd.Location = new System.Drawing.Point(162, 49);
             this.TxtAd.Name = "TxtAd";
             this.TxtAd.Size = new System.Drawing.Size(153, 31);
-            this.TxtAd.TabIndex = 29;
+            this.TxtAd.TabIndex = 1;
             // 
             // LblAd
             // 
@@ -80,7 +81,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.MskTC.Mask = "00000000000";
             this.MskTC.Name = "MskTC";
             this.MskTC.Size = new System.Drawing.Size(153, 31);
-            this.MskTC.TabIndex = 27;
+            this.MskTC.TabIndex = 3;
             this.MskTC.ValidatingType = typeof(int);
             // 
             // label2
@@ -97,7 +98,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.TxtSifre.Location = new System.Drawing.Point(162, 197);
             this.TxtSifre.Name = "TxtSifre";
             this.TxtSifre.Size = new System.Drawing.Size(153, 31);
-            this.TxtSifre.TabIndex = 33;
+            this.TxtSifre.TabIndex = 5;
             // 
             // label3
             // 
@@ -114,7 +115,7 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.CmbBrans.Location = new System.Drawing.Point(162, 160);
             this.CmbBrans.Name = "CmbBrans";
             this.CmbBrans.Size = new System.Drawing.Size(153, 31);
-            this.CmbBrans.TabIndex = 34;
+            this.CmbBrans.TabIndex = 4;
             // 
             // label1
             // 
@@ -131,16 +132,19 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.BtnBilgiGuncelle.Location = new System.Drawing.Point(207, 234);
             this.BtnBilgiGuncelle.Name = "BtnBilgiGuncelle";
             this.BtnBilgiGuncelle.Size = new System.Drawing.Size(108, 36);
-            this.BtnBilgiGuncelle.TabIndex = 36;
+            this.BtnBilgiGuncelle.TabIndex = 6;
             this.BtnBilgiGuncelle.Text = "Güncelle";
             this.BtnBilgiGuncelle.UseVisualStyleBackColor = false;
+            this.BtnBilgiGuncelle.Click += new System.EventHandler(this.BtnBilgiGuncelle_Click);
             // 
             // FrmDoktorBilgiDuzenle
             // 
+            this.AcceptButton = this.BtnBilgiGuncelle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(475, 424);
+            this.ClientSize = new System.Drawing.Size(372, 316);
             this.Controls.Add(this.BtnBilgiGuncelle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CmbBrans);
@@ -153,9 +157,12 @@ namespace Hastane_Yönetim_Randevu_Projesi
             this.Controls.Add(this.MskTC);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorBilgiDuzenle";
-            this.Text = "FrmDoktorBilgiDuzenle";
+            this.Text = "Doktor Bilgi Güncelle";
+            this.Load += new System.EventHandler(this.FrmDoktorBilgiDuzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
